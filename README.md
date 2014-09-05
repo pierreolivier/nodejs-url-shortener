@@ -5,10 +5,11 @@ simple api, made with nodejs, to shorten urls.
 
 features
 =============================
-- short any url
+- short any urls
 - long url id option
 - password protection
 - cookie protection
+- timed url
 
 
 how the key works
