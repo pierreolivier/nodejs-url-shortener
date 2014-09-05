@@ -4,15 +4,27 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
+var configuration = require('./configuration');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
 
+var manager = require('./lib/manager');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
+
+// mysql
+manager.setDatabase(mysql.createPool({
+    host     : configuration.mysql.host,
+    user     : configuration.mysql.user,
+    password : configuration.mysql.password,
+    database : configuration.mysql.database
+}));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -27,9 +39,9 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+    var key = req.url.substr(1);
+
+    res.send("");
 });
 
 // error handlers

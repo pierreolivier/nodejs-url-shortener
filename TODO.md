@@ -19,11 +19,11 @@ optional:
 "long_key": "1"
 
 - password protection :
-"protection": "password"
+"protection": "password",
 "password": "custom_password"
 
 - cookie protection (see /login):
-"protection": "cookie"
+"protection": "cookie",
 "password": "custom_password"
 
 results:
