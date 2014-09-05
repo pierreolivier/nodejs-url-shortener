@@ -13,6 +13,7 @@ var users = require('./routes/users');
 var app = express();
 
 var manager = require('./lib/manager');
+var api = require('./lib/api');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -41,7 +42,7 @@ app.use('/users', users);
 app.use(function(req, res, next) {
     var key = req.url.substr(1);
 
-    res.send("");
+    api.redirect(key, res);
 });
 
 // error handlers
