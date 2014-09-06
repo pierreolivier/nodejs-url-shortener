@@ -23,5 +23,8 @@ router.post('/login', function(req, res) {
 router.post('/user/new', function(req, res) {
     admin.userNew(req.body, res);
 });
+router.post('/user/list', function(req, res) {
+    admin.userList(req.body, res);
+});
 
 module.exports = router;
