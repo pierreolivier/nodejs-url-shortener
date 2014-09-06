@@ -1,7 +1,9 @@
 todo list
 =============================
-- admin api
-- remove a link
+- /expand
+- /urls
+- /delete
+- /url/delete
 
 database
 =============================
@@ -12,7 +14,7 @@ urls : id_url|key|id_user|protection|protection_argument|created|timeout|clicks
 
 
 
-api
+public api
 =============================
 ## shorten an url
 
@@ -102,6 +104,35 @@ or
 
 
 
+## list urls
+
+/urls
+
+    {
+        "key": "api_key"
+    }
+    
+    
+
+## delete url(s)
+/delete
+
+    {
+        "key": "api_key",
+        "urls": "0Ca$2C, 0CaSD2C"
+    }    
+or, to delete all links
+    
+    {
+        "key": "api_key",
+        "urls": "-1"
+    }
+
+
+
+admin api
+=============================
+
 ## register a new user (admin)
 
 /user/new
@@ -141,4 +172,16 @@ or
         "password": "admin_password"
         "key": "user_key"
     }
+
+
+
+## delete url(s) (admin)
+
+/url/delete
+
+    {
+        "password": "admin_password"
+        "keys": "key1,key2,key3"
+    }  
+    
     

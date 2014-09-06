@@ -29,5 +29,11 @@ router.post('/user/list', function(req, res) {
 router.post('/user/get', function(req, res) {
     admin.userGet(req.body, res);
 });
+router.post('/user/delete', function(req, res) {
+    admin.userDelete(req.body, res);
+});
+router.post('/url/delete', function(req, res) {
+    admin.urlDelete(req.body, res);
+});
 
 module.exports = router;

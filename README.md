@@ -48,6 +48,14 @@ install
 4) (optional) set the passphare in configuration.js
 
 
+
+5) install the database with database.sql
+
+
+
+6) set the database username, password... in configuration.js
+
+
 run
 =============================
 
