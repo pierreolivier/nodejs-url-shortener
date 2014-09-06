@@ -9,7 +9,7 @@ urls : id_url|key|id_user|protection|protection_argument|created|timeout|clicks
 
 api
 =============================
-shorten an url
+## shorten an url
 
 /shorten
 
@@ -20,17 +20,18 @@ shorten an url
 
 optional:
 - long key :
-"long_key": "1"
+
+    "long_key": "1"
 
 - password protection :
-"protection": "password",
 
-"password": "custom_password"
+    "protection": "password",
+    "password": "custom_password"
 
 - cookie protection (see /login):
-"protection": "cookie",
 
-"password": "custom_password"
+    "protection": "cookie",
+    "password": "custom_password"
 
 results:
 
@@ -55,7 +56,7 @@ or
 
 
 
-expand a short url
+## expand a short url
 
 /expand
 
@@ -86,7 +87,7 @@ or
 
 
 
-log the current browser for the cookie protection
+## log the current browser for the cookie protection
 
 /login
 
@@ -96,7 +97,7 @@ log the current browser for the cookie protection
 
 
 
-register a new user (admin)
+## register a new user (admin)
 
 /users/new
 
@@ -106,7 +107,7 @@ register a new user (admin)
 
 
 
-get all users (admin)
+## get all users (admin)
 
 /users/list
 
@@ -116,7 +117,7 @@ get all users (admin)
 
 
 
-get user infos (admin)
+## get user infos (admin)
 
 /users/get
 
@@ -127,7 +128,7 @@ get user infos (admin)
 
 
 
-delete an user (admin)
+## delete an user (admin)
 
 /users/delete
 
@@ -135,3 +136,4 @@ delete an user (admin)
         "password": "admin_password"
         "key": "user_key"
     }
+    
