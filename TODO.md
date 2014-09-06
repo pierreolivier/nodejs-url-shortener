@@ -1,6 +1,7 @@
 todo list
 =============================
-
+- admin api
+- remove a link
 
 database
 =============================
@@ -103,7 +104,7 @@ or
 
 ## register a new user (admin)
 
-/users/new
+/user/new
 
     {
         "password": "admin_password"
@@ -113,7 +114,7 @@ or
 
 ## get all users (admin)
 
-/users/list
+/user/list
 
     {
         "password": "admin_password"
@@ -123,7 +124,7 @@ or
 
 ## get user infos (admin)
 
-/users/get
+/user/get
 
     {
         "password": "admin_password"
@@ -134,7 +135,7 @@ or
 
 ## delete an user (admin)
 
-/users/delete
+/user/delete
 
     {
         "password": "admin_password"

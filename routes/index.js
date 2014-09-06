@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var helper = require('../lib/helper');
 var api = require('../lib/api');
+var admin = require('../lib/api.admin');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -17,6 +18,10 @@ router.get('/login', function(req, res) {
 });
 router.post('/login', function(req, res) {
     api.login(req.body, req.cookies, res);
+});
+
+router.post('/user/new', function(req, res) {
+    admin.userNew(req.body, res);
 });
 
 module.exports = router;
