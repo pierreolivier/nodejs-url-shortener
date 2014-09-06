@@ -3,8 +3,18 @@
  */
 var configuration = {};
 
+configuration.server = {};
 configuration.ssl = {};
+configuration.mysql = {};
+
+configuration.server.domain = 'localhost';
+configuration.server.password = 'admin';
 
 configuration.ssl.passphrase = "";
+
+configuration.mysql.host = 'domain:3000';
+configuration.mysql.user = 'url_shortener';
+configuration.mysql.password = 'password';
+configuration.mysql.database = 'url_shortener';
 
 module.exports = configuration;

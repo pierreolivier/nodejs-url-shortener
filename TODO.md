@@ -2,17 +2,21 @@ database
 =============================
 
 users : id_user|key|short_key
+
 urls : id_url|key|id_user|protection|protection_argument|created|timeout|clicks
+
 
 
 api
 =============================
 shorten an url
+
 /shorten
-{
-    "key": "api_key",
-    "url": "http://google.com"
-}
+
+    {
+        "key": "api_key",
+        "url": "http://google.com"
+    }
 
 optional:
 - long key :
@@ -20,57 +24,114 @@ optional:
 
 - password protection :
 "protection": "password",
+
 "password": "custom_password"
 
 - cookie protection (see /login):
 "protection": "cookie",
+
 "password": "custom_password"
 
 results:
-{
-    "shortUrl": "https://domain/0Ca$2C",
-    "longUrl": "http://google.com",
-    "status": "ok"
-}
-or
-{
-    "shortUrl": "",
-    "longUrl": "http://longurl"
-    "status": "error"
-    "error": {
-        "code": 2,
-        "reason": "user_not_found",
-        "message": "User not found"
+
+    {
+        "shortUrl": "https://domain/0Ca$2C",
+        "longUrl": "http://google.com",
+        "status": "ok"
     }
-}
+
+or
+
+    {
+        "shortUrl": "",
+        "longUrl": "http://longurl"
+        "status": "error"
+        "error": {
+            "code": 2,
+            "reason": "user_not_found",
+            "message": "User not found"
+        }
+    }
+
+
 
 expand a short url
+
 /expand
-{
-    "key": "api_key",
-    "url": "http://domain/0Ca$2C"
-}
+
+    {
+        "key": "api_key",
+        "url": "http://domain/0Ca$2C"
+    }
 
 results:
-{
-    "longUrl": "http://google.com",
-    "shortUrl": "https://domain/0Ca$2C",
-    "status": "ok"
-}
-or
-{
-    "shortUrl": "",
-    "longUrl": "http://longurl"
-    "status": "error"
-    "error": {
-        "code": 2,
-        "reason": "user_not_found",
-        "message": "User not found"
+
+    {
+        "longUrl": "http://google.com",
+        "shortUrl": "https://domain/0Ca$2C",
+        "status": "ok"
     }
-}
+or
+
+    {
+        "shortUrl": "",
+        "longUrl": "http://longurl"
+        "status": "error"
+        "error": {
+            "code": 2,
+            "reason": "user_not_found",
+            "message": "User not found"
+        }
+    }
+
+
 
 log the current browser for the cookie protection
+
 /login
-{
-    "password": "custom_password"
-}
+
+    {
+        "password": "custom_password"
+    }
+
+
+
+register a new user (admin)
+
+/users/new
+
+    {
+        "password": "admin_password"
+    }
+
+
+
+get all users (admin)
+
+/users/list
+
+    {
+        "password": "admin_password"
+    }
+
+
+
+get user infos (admin)
+
+/users/get
+
+    {
+        "password": "admin_password"
+        "key": "user_key"
+    }
+
+
+
+delete an user (admin)
+
+/users/delete
+
+    {
+        "password": "admin_password"
+        "key": "user_key"
+    }
