@@ -1,9 +1,8 @@
 todo list
 =============================
 - /expand
-- /urls
+- /get
 - /delete
-- /url/delete
 
 database
 =============================
