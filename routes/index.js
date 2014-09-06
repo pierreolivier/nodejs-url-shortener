@@ -26,5 +26,8 @@ router.post('/user/new', function(req, res) {
 router.post('/user/list', function(req, res) {
     admin.userList(req.body, res);
 });
+router.post('/user/get', function(req, res) {
+    admin.userGet(req.body, res);
+});
 
 module.exports = router;
