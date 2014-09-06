@@ -40,9 +40,9 @@ app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var key = req.url.substr(1);
+    var key = req._parsedUrl.pathname.substr(1);
 
-    api.redirect(key, res);
+    api.redirect(key, req.query, req.cookies, res);
 });
 
 // error handlers

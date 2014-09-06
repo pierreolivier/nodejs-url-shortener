@@ -12,4 +12,11 @@ router.post('/shorten', function(req, res) {
     api.shorten(req.body, res);
 });
 
+router.get('/login', function(req, res) {
+    api.login(req.query, req.cookies, res);
+});
+router.post('/login', function(req, res) {
+    api.login(req.body, req.cookies, res);
+});
+
 module.exports = router;
