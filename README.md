@@ -46,3 +46,9 @@ install
 
 
 4) (optional) set the passphare in configuration.js
+
+
+run
+=============================
+
+    node ./bin/www

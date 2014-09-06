@@ -1,0 +1,33 @@
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE IF NOT EXISTS `url_shortener` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `url_shortener`;
+
+CREATE TABLE IF NOT EXISTS `urls` (
+  `id_url` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `key` varchar(250) NOT NULL DEFAULT '',
+  `url` varchar(2000) NOT NULL DEFAULT '',
+  `protection` varchar(250) NOT NULL DEFAULT '',
+  `protection_argument` varchar(250) NOT NULL DEFAULT '',
+  `created` datetime NOT NULL,
+  `timeout` datetime NOT NULL,
+  `clicks` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id_url`),
+  KEY `key` (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(250) NOT NULL DEFAULT '',
+  `short_key` varchar(250) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id_user`),
+  KEY `key` (`key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
