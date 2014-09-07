@@ -1,8 +1,6 @@
 todo list
 =============================
-- /expand
-- /get
-- /delete
+
 
 database
 =============================
@@ -68,21 +66,23 @@ or
 
     {
         "key": "api_key",
-        "url": "http://domain/0Ca$2C"
+        "urls": "0Ca$2C,0Ca32C"
     }
 
 results:
 
     {
-        "longUrl": "http://google.com",
-        "shortUrl": "https://domain/0Ca$2C",
+        "urls": [
+            {
+                "longUrl": "http://google.com",
+                "shortUrl": "https://domain/0Ca$2C"
+            }
+        ],
         "status": "ok"
     }
 or
 
-    {
-        "shortUrl": "",
-        "longUrl": "http://longurl"
+    {        
         "status": "error"
         "error": {
             "code": 2,
@@ -105,12 +105,22 @@ or
 
 ## list urls
 
-/urls
+/list
 
     {
         "key": "api_key"
     }
+ 
     
+    
+## get urls
+
+/get
+
+    {
+        "key": "api_key",
+        "urls": "key1,key2"
+    }
     
 
 ## delete url(s)
@@ -118,7 +128,7 @@ or
 
     {
         "key": "api_key",
-        "urls": "0Ca$2C, 0CaSD2C"
+        "urls": "0Ca$2C,0CaSD2C"
     }    
 or, to delete all links
     

@@ -12,11 +12,17 @@ router.get('/', function(req, res) {
 router.post('/shorten', function(req, res) {
     api.shorten(req.body, res);
 });
+router.post('/expand', function(req, res) {
+    api.expand(req.body, res);
+});
 router.post('/list', function(req, res) {
     api.list(req.body, res);
 });
 router.post('/get', function(req, res) {
     api.get(req.body, res);
+});
+router.post('/delete', function(req, res) {
+    api.deleteUrls(req.body, res);
 });
 router.get('/login', function(req, res) {
     api.login(req.query, req.cookies, res);
