@@ -1,6 +1,7 @@
 todo list
 =============================
-
+- test api key
+- test admin key
 
 database
 =============================

@@ -45,7 +45,7 @@ install
 
 
 
-4) (optional) set the passphare in configuration.js
+4) (optional) set the passphrase in configuration.js
 
 
 
@@ -56,7 +56,25 @@ install
 6) set the database username, password... in configuration.js
 
 
+
+7) change WD variable in nodejs_url_shortener
+
+
+
+8) install the daemon
+
+	sudo cp nodejs_url_shortener /etc/init.d/
+	
+	sudo chmod 0755 /etc/init.d/nodejs_url_shortener
+	
+	sudo update-rc.d nodejs_url_shortener defaults
+
+
 run
 =============================
 
     node ./bin/www
+    
+or
+    
+    sudo service nodejs_url_shortener start
