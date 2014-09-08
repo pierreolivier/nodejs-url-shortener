@@ -19,11 +19,11 @@ router.post('/get', function(req, res) {
 router.post('/delete', function(req, res) {
     api.deleteUrls(req.body, res);
 });
-router.get('/login', function(req, res) {
-    api.login(req.query, req.cookies, res);
+router.get('/register', function(req, res) {
+    api.register(req.query, req.cookies, res);
 });
-router.post('/login', function(req, res) {
-    api.login(req.body, req.cookies, res);
+router.post('/register', function(req, res) {
+    api.register(req.body, req.cookies, res);
 });
 
 router.post('/user/new', function(req, res) {

@@ -26,16 +26,19 @@ public api
 optional:
 - long key :
 
+
     "long_key": "1"
 
 - password protection :
 
-    "protection": "password",
+
+    "protection": "password",    
     "password": "custom_password"
 
 - cookie protection (see /login):
 
-    "protection": "cookie",
+
+    "protection": "cookie",    
     "password": "custom_password"
 
 results:
@@ -96,7 +99,7 @@ or
 
 ## log the current browser for the cookie protection
 
-/login
+/register
 
     {
         "password": "custom_password"
@@ -124,7 +127,9 @@ or
     }
     
 
+
 ## delete url(s)
+
 /delete
 
     {
@@ -140,8 +145,26 @@ or, to delete all links
 
 
 
+## test api key
+
+/login
+
+    {
+        "key": "api_key"
+    }
+
 admin api
 =============================
+
+## test admin password
+
+/server/login
+
+    {
+        "password": "admin_password"
+    }
+
+
 
 ## register a new user (admin)
 
