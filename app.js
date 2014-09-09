@@ -40,7 +40,7 @@ app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var key = req._parsedUrl.pathname.substr(1);
+    var key = decodeURIComponent(req._parsedUrl.pathname.substr(1));
 
     api.redirect(key, req.query, req.cookies, res);
 });
