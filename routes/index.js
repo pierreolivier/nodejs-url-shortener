@@ -25,7 +25,16 @@ router.get('/register', function(req, res) {
 router.post('/register', function(req, res) {
     api.register(req.body, req.cookies, res);
 });
+router.get('/login', function(req, res) {
+    api.login(req, req.query, res);
+});
+router.post('/login', function(req, res) {
+    api.login(req, req.body, res);
+});
 
+router.post('/server/login', function(req, res) {
+    admin.serverLogin(req, req.body, res);
+});
 router.post('/user/new', function(req, res) {
     admin.userNew(req.body, res);
 });

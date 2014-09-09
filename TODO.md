@@ -1,7 +1,6 @@
 todo list
 =============================
-- test api key
-- test admin key
+- ip filtering
 
 database
 =============================

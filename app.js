@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
 var configuration = require('./configuration');
+var ipfiltering = require('ip-filtering');
 
 var routes = require('./routes/index');
 
@@ -29,10 +30,7 @@ manager.setDatabase(mysql.createPool({
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
-app.use(function (req, res, next) {
-    console.log(req.connection.remoteAddress);
-    next();
-});
+app.use(ipfiltering.middleware({}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
